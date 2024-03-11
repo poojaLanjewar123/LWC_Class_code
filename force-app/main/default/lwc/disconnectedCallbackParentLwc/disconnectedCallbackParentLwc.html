@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="disconnectedCallback Example">
+        <p>Parent LWC component</p>
+        <lightning-button variant="brand" slot="actions" label="Show/Hide" onclick={handleShowHide}
+            class="slds-m-left_x-small"></lightning-button>
+        <template if:true={show}>
+            <c-disconnected-callback-child-lwc></c-disconnected-callback-child-lwc>
+        </template>
+    </lightning-card>
+</template>

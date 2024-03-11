@@ -1,0 +1,36 @@
+<template>
+    <lightning-button label="delete" onclick={handleDelete}></lightning-button>
+    <lightning-button label="update" onclick={handleUpdate}></lightning-button>
+    <lightning-card>
+        <lightning-button label="viewAccount" onclick={handleRecord}></lightning-button>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>view</th>
+                    <th>edit</th>
+                    <th>delete</th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+                <template for:each={result} for:item="acc">
+
+                    <tr key={acc.Id}>
+                        <td>{acc.Id}</td>
+                        <td>{acc.Name}</td>
+                        <td>{acc.Phone}</td>
+                        <td>view</td>
+                        <td><lightning-button label="update"  onclick={handleUpdate} value={acc.Id}></lightning-button></td>
+                        <td><lightning-button label="delete"  onclick={handleDelete} value={acc.Id}></lightning-button></td>
+                    </tr>
+
+                </template>
+            </tbody>
+
+    </table>
+</lightning-card>
+</template>
